@@ -39,9 +39,9 @@ public class DuelingButtons implements ActionListener {
 		// 6. Add an action listener to the rightButton
 		rightButton.addActionListener(this);
 		// 7. Add the leftButton to the panel
-		panel.add(leftButton,rightButton);
+		panel.add(leftButton);
 		// 8. Add the rightButton to the panel
-
+		panel.add(rightButton);
 		// 9. Pack the frame
 		frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
@@ -59,6 +59,14 @@ public class DuelingButtons implements ActionListener {
 		// Set the PREFERRED size of the leftButton to SMALL
 		if (buttonPressed.equals(leftButton)) {
 			rightButton.setText("No, click Me!");
+			rightButton.setPreferredSize(BIG);
+			leftButton.setText("Click Me!");
+			leftButton.setPreferredSize(SMALL);
+		} else if (buttonPressed.equals(rightButton)) {
+			leftButton.setText("No, click Me!");
+			leftButton.setPreferredSize(BIG);
+			rightButton.setText("Click Me!");
+			rightButton.setPreferredSize(SMALL);
 		}
 		/* If the buttonPressed was the rightButton, do the opposite. */
 
